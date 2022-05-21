@@ -20,8 +20,8 @@ public class AvaliacaoFisica {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @ManyToOne(cascade = CascadeType.ALL)
-  @JoinColumn(name = "aluno_id")
+  @ManyToOne(cascade = CascadeType.ALL)   // cascade, o q fazer aqui vai se relacionando com alunos
+  @JoinColumn(name = "aluno_id")          // onde vai estar a chave estrangeira
   private Aluno aluno;
 
   private LocalDateTime dataDaAvaliacao = LocalDateTime.now();

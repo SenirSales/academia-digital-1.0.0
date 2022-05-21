@@ -11,12 +11,12 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Entity
-@Table(name = "tb_alunos")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@Data                 // Get e Set
+@NoArgsConstructor    // construtor vasio
+@AllArgsConstructor   // sonstrutor todos os atributos
+@Entity               // Resposavel por criar nossas tabelas, obs: com esta anotacoes requer um ID
+@Table(name = "tb_alunos")   //  da nome a tabela
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})   // excption ignorados do json
 public class Aluno {
 
   @Id
@@ -32,8 +32,8 @@ public class Aluno {
 
   private LocalDate dataDeNascimento;
 
-  @OneToMany(mappedBy = "aluno", fetch = FetchType.LAZY)
-  @JsonIgnore
+  @OneToMany(mappedBy = "aluno", fetch = FetchType.LAZY)    // Anotaceos de relacionamento  - LAZY = so carrega o relacionamento se chama o medado abaixo
+  @JsonIgnore   // excption ignorados do json
   private List<AvaliacaoFisica> avaliacoes = new ArrayList<>();
 
 }
