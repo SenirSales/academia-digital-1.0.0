@@ -1,6 +1,5 @@
 package me.dio.academia.digital.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,7 +12,6 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Entity
 @Table(name = "tb_avaliacoes")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class AvaliacaoFisica {
 
   @Id
@@ -31,5 +29,4 @@ public class AvaliacaoFisica {
 
   @Column(name = "altura_atual")
   private double altura;
-
 }

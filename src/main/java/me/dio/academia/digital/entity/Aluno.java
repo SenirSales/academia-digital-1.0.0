@@ -35,5 +35,4 @@ public class Aluno {
   @OneToMany(mappedBy = "aluno", fetch = FetchType.LAZY)    // Anotaceos de relacionamento  - LAZY = so carrega o relacionamento se chama o medado abaixo
   @JsonIgnore   // excption ignorados do json
   private List<AvaliacaoFisica> avaliacoes = new ArrayList<>();
-
 }
